@@ -1,5 +1,4 @@
 theme: jekyll-theme-minimal
-gems:
-  - asciidoctor-diagram
 plugins:
   - jekyll-asciidoc
+  - asciidoctor-diagram
