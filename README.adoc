@@ -135,8 +135,8 @@ require 'asciidoctor'
 puts Asciidoctor.convert_file 'mysample.adoc', to_file: false
 ----
 
-[plantuml, diagram-classes, png]
-....
+[plantuml, format="png", id="myId"]
+----
 class BlockProcessor
 class DiagramBlock
 class DitaaBlock
@@ -145,7 +145,7 @@ class PlantUmlBlock
 BlockProcessor <|-- DiagramBlock
 DiagramBlock <|-- DitaaBlock
 DiagramBlock <|-- PlantUmlBlock
-....
+----
 
 
 [ditaa, my-diagram, png]
