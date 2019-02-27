@@ -1,0 +1,169 @@
+
+
+Applications / Projects
+
+<<servers.adoc#, Servers>>
+
+====
+Example: one
+====
+
+[cols=2*]
+|===
+|*Name*|*Age*
+
+|Hans
+|50
+
+|Birthe
+|34
+|===
+
+[%header,format=csv]
+|===
+Artist,Track,Genre
+Baauer,Harlem Shake,Hip Hop
+The Lumineers,Ho Hey,Folk Rock
+|===
+
+*bold* and **un**constrained
+
+italic _constrained_ & __un__constrained
+
+bold italic *_constrained_* & **__un__**constrained
+
+monospace `constrained` & ``un``constrained
+
+monospace bold `*constrained*` & ``**un**``constrained
+
+monospace italic `_constrained_` & ``__un__``constrained
+
+monospace bold italic `*_constrained_*` & ``**__un__**``constrained
+
+
+Type the word [.userinput]#asciidoc# into the search bar.
+
+
+\*Stars* will appear as *Stars*, not as bold text.
+
+\&sect; will appear as an entity, not the &sect; symbol.
+
+\\__func__ will appear as __func__, not as emphasized text.
+
+\{two-semicolons} will appear {two-semicolons}, not resolved as ;;.
+
+pass:[content like #{variable} passed directly to the output] followed by normal content.
+
+content with only select substitutions applied: pass:c,a[__<{email}>__]
+
+WARNING: Enter at your own risk.
+
+NOTE: This is a note
+
+TIP: This is a tip
+
+IMPORTANT: Important
+
+CAUTION: Be caution with this command
+
+=Line Break Doc Title
+
+Rubies are red,
+Topazes are blue.
+
+WARNING: Do not delete files
+
++++content passed directly to the output+++ followed by normal content.
+
+-> Single right arrow
+=> Double right arrow
+
+(C) Copyright 2019
+
+== Bullet list 1
+
+* Number 1
+** Number 1.1
+*** Number 1.1.1.
+* Number 2
+
+== Bullet list 2
+- Entry 1
+- Entry 2
+
+== Numbered list
+. Entry 1
+. Entry 2
+
+== Numbered list
+[start=3]
+ . Step four
+ . Step five
+ . Step six
+
+[%reversed]
+.Parts of an atom
+. Protons
+. Electrons
+. Neutrons
+
+== Descriptions
+
+CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.
+Keyboard:: Used to enter text or control items on the screen.
+Mouse:: Used to point to and select items on your computer screen.
+Monitor:: Displays information in visual form using text and graphics.
+
+
+== Descriptions
+[horizontal]
+CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.
+
+== Headline 2
+=== Headline 3
+==== Headline 4
+===== Headline 5
+
+[source,ruby]
+----
+require 'asciidoctor'
+
+puts Asciidoctor.convert_file 'mysample.adoc', to_file: false
+----
+
+[plantuml, format="png", id="myId"]
+----
+class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+----
+
+
+[ditaa, my-diagram, png]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....
